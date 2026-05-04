@@ -182,4 +182,4 @@ Make sure to use the `-it` flag: `docker run -it ubuntu:22.04 bash`
 
 **Slow training on CPU**
 Training 2000 episodes takes ~5–15 minutes on CPU. This is expected. A GPU will speed it up significantly if available.
-![This is the learning curve of or agent ](Reinforcement-Learning-Project\learning_curve.png)
+![This is the learning curve of or agent ](learning_curve.png)
