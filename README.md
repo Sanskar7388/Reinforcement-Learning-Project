@@ -1,6 +1,31 @@
-# RL Credit Limit Optimization
+# RL Credit Limit Optimization using Deep Reinforcement Learning
 
-A Reinforcement Learning system that trains a **Dueling Double DQN** agent to make optimal credit limit decisions (Increase / Decrease / Maintain / Block) for credit card customers.
+A financially interpretable **Deep Reinforcement Learning** framework for adaptive credit-limit management in retail banking.
+
+This project trains a **Dueling Double Deep Q-Network (Dueling Double DQN)** agent to make dynamic credit decisions for customers by balancing:
+
+- profitability (interest + transaction revenue),
+- credit risk (default probability),
+- customer retention (churn risk),
+- and long-term financial stability.
+
+Unlike traditional rule-based banking systems, the RL agent learns sequential decision-making policies through interaction with a simulated financial environment containing delayed consequences and stochastic customer behavior.
+
+The final agent learns when to:
+
+- **Increase** credit limits for financially healthy customers,
+- **Decrease** exposure for risky profiles,
+- **Maintain** stable customers,
+- and **Block** highly delinquent accounts.
+
+The project evolved from early Monte Carlo RL experiments using real-world Kaggle datasets into a full Deep RL financial simulation framework with:
+
+- synthetic customer generation,
+- calibrated transition models,
+- delayed risk accumulation,
+- action-bias diagnostics,
+- entropy monitoring,
+- and advanced RL stabilization techniques.
 
 ---
 
@@ -182,4 +207,66 @@ Make sure to use the `-it` flag: `docker run -it ubuntu:22.04 bash`
 
 **Slow training on CPU**
 Training 2000 episodes takes ~5–15 minutes on CPU. This is expected. A GPU will speed it up significantly if available.
-![This is the learning curve of or agent ](learning_curve.png)
+
+## RL Diagnostics & Validation
+
+The project includes several advanced RL diagnostics to validate learning quality:
+
+- Policy entropy monitoring
+- Action-bias detection
+- Q-value gap analysis
+- Reward decomposition
+- Baseline comparison
+- Separate train/eval environments
+
+These diagnostics help detect:
+- policy collapse,
+- over-aggressive lending,
+- unstable Q-values,
+- and reward imbalance.
+
+---
+
+## Learning Curve & Training Diagnostics
+
+The following plots show:
+
+- reward progression,
+- loss trends,
+- epsilon decay,
+- policy entropy,
+- evaluation performance,
+- and overall RL learning dynamics.
+
+![Learning Curve and RL Training Diagnostics](learning_curve.png)
+
+---
+## Baseline Comparison
+
+The trained DQN agent is evaluated against multiple baselines:
+
+- Random Policy
+- Always Increase
+- Always Decrease
+- Always Maintain
+- Rule-Based Heuristic
+
+This comparison validates that the RL agent learns adaptive customer-specific strategies rather than static heuristic behavior.
+
+![Baseline Comparison](baseline_comparison.png)
+
+---
+
+## Key Learning Outcomes
+
+This project demonstrates several important RL-finance concepts:
+
+- sequential financial decision-making,
+- delayed risk accumulation,
+- reward balancing,
+- stochastic environment modeling,
+- action-bias collapse,
+- exploration vs exploitation tradeoff,
+- and financially interpretable RL behavior.
+
+The final system behaves as a coherent risk-aware financial decision-making agent rather than a static rule-based policy.
