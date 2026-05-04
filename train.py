@@ -874,8 +874,8 @@ def plot_training(history: Dict, eval_results: Dict, save_dir: str = ".") -> Non
 
     for ax_i, (ax, data, title, col) in enumerate(zip(
         axes,
-        [means, entrs],
-        ["Mean reward", "Policy entropy"],
+        [means, drates, crates, entrs],
+        ["Mean reward", "Default rate (%)", "Churn rate (%)", "Policy entropy"],
         [colors, [RED if n == "DQN Agent" else "#3a3d50" for n in names],
          [AMBER if n == "DQN Agent" else "#3a3d50" for n in names],
          [PURPLE if n == "DQN Agent" else "#3a3d50" for n in names]],
