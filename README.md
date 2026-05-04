@@ -253,7 +253,6 @@ The trained DQN agent is evaluated against multiple baselines:
 
 This comparison validates that the RL agent learns adaptive customer-specific strategies rather than static heuristic behavior.
 
-![Baseline Comparison](baseline_comparison.png)
 
 ---
 
